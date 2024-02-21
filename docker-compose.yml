@@ -1,0 +1,19 @@
+#menggunakan docker composer versi 2.24 sesuai yang terinstall
+version: "2.24"
+#mendefinikan services
+services:
+  #mendefinikan services item-app
+  item-app:
+    image: ghcr.io/bocahndeso/item-app:v1 #mengambil image item-app dari github packages
+    ports:
+      - "8080:80" #menggunakan port 80 di host
+    depends_on:
+      - item-db # service dijalankan setelah service item-db berjalan
+  #Mendefinikan service tem-db
+  item-db:
+    image: mongo:3 # mengambil image dr docker hub
+    volumes:
+      - app-db:/data/db # membuat volume di direktory /data/db
+
+volumes:
+  app-db:
