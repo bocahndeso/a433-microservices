@@ -6,7 +6,7 @@ services:
   item-app:
     image: ghcr.io/bocahndeso/item-app:v1 #mengambil image item-app dari github packages
     ports:
-      - "8080:80" #menggunakan port 80 di host
+      - "80:8080" #menggunakan port 80 di host
     depends_on:
       - item-db # service dijalankan setelah service item-db berjalan
   #Mendefinikan service tem-db

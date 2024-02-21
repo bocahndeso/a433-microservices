@@ -8,7 +8,7 @@ COPY . .
 ENV NODE_ENV=production DB_HOST=item-db
 #install depedensi yang diperlukan
 RUN npm install --production --unsafe-perm && npm run build
-#menjalankan aplikasi 
-CMD ["npm", "start"]
 #expose port yang digunakan oleh aplikasi
 EXPOSE 8080
+#menjalankan aplikasi 
+CMD ["npm", "start"]
